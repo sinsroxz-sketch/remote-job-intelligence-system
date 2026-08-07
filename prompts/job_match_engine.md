@@ -60,3 +60,17 @@ RESUME CHANGES NEEDED
 
 FINAL VERDICT
 One concise recommendation.
+DEAL-BREAKER CHECK:
+
+Before calculating the final recommendation, check for:
+
+- Candidate cannot work remotely from India
+- Mandatory office or hybrid attendance
+- US-only or country-restricted employment
+- Required relocation
+- Rotational night shifts
+- Role is substantially more junior than the candidate
+- Role requires deep engineering/development expertise not demonstrated by the candidate
+
+If a hard deal-breaker exists, clearly state it and normally return SKIP,
+regardless of keyword similarity.

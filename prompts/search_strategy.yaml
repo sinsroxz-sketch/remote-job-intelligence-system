@@ -1,0 +1,176 @@
+candidate_summary:
+  experience_years: "12+"
+  level: "Mid-Senior"
+  strongest_positioning: "Operations leader with banking operations, client lifecycle, process transformation and IAM operations experience"
+
+primary_role_families:
+  - name: "Operations Management"
+    confidence: "High"
+  - name: "Client Operations"
+    confidence: "High"
+  - name: "Business Operations"
+    confidence: "High"
+  - name: "Service Delivery"
+    confidence: "High"
+  - name: "Client Lifecycle Management"
+    confidence: "High"
+  - name: "IAM Operations"
+    confidence: "Medium-High"
+  - name: "Identity Governance"
+    confidence: "Medium"
+  - name: "Operations Transformation"
+    confidence: "High"
+
+adjacent_role_families:
+  - name: "GTM Operations"
+    confidence: "Medium"
+  - name: "Revenue Operations"
+    confidence: "Medium"
+  - name: "Implementation Operations"
+    confidence: "Medium-High"
+  - name: "Customer Operations"
+    confidence: "Medium-High"
+  - name: "Operations Automation"
+    confidence: "Developing"
+
+priority_job_titles:
+  - Operations Manager
+  - Senior Operations Manager
+  - Business Operations Manager
+  - Business Operations Lead
+  - Client Operations Manager
+  - Customer Operations Manager
+  - Service Delivery Manager
+  - Operations Excellence Manager
+  - Operational Excellence Lead
+  - Process Improvement Manager
+  - Process Transformation Manager
+  - Program Operations Manager
+  - Client Lifecycle Manager
+  - Client Onboarding Manager
+  - KYC Operations Manager
+  - Banking Operations Manager
+  - Implementation Manager
+  - Implementation Operations Manager
+  - IAM Operations Manager
+  - Identity Operations Manager
+  - Identity Governance Analyst
+  - Identity Governance Manager
+  - Access Management Lead
+  - GTM Operations Manager
+  - Revenue Operations Manager
+
+search_keywords:
+  operations:
+    - operations management
+    - business operations
+    - client operations
+    - customer operations
+    - service delivery
+    - operational excellence
+    - process improvement
+    - process transformation
+    - workflow design
+    - operational governance
+    - program operations
+
+  banking:
+    - client lifecycle management
+    - client onboarding
+    - corporate banking operations
+    - account opening
+    - account maintenance
+    - KYC operations
+    - CDD
+    - banking operations
+
+  iam:
+    - IAM operations
+    - identity operations
+    - identity governance
+    - access management
+    - access governance
+    - RBAC
+    - entitlement management
+    - CyberArk
+    - Active Directory
+    - ServiceNow
+
+  emerging:
+    - GTM operations
+    - revenue operations
+    - workflow automation
+    - AI operations
+    - operations automation
+
+preferred_company_types:
+  - Remote-first SaaS
+  - FinTech
+  - Cybersecurity
+  - Identity Security
+  - AI companies
+  - Cloud infrastructure
+  - Developer tools
+  - Global technology companies
+
+remote_requirements:
+  work_mode: "Fully remote"
+  india_eligible: true
+  preferred_regions:
+    - Worldwide
+    - India
+    - APAC
+    - EMEA with India eligibility
+
+  avoid:
+    - US-only roles
+    - EU-only roles without India eligibility
+    - Mandatory hybrid roles
+    - Mandatory office attendance
+    - Rotational night shifts
+
+exclude_role_patterns:
+  - Principal Engineer
+  - Software Engineer
+  - IAM Developer
+  - SailPoint Developer
+  - CyberArk Engineer requiring implementation expertise
+  - Security Architect
+  - Cloud Security Engineer
+  - SOC Analyst
+  - Penetration Tester
+  - Data Engineer
+  - Product Engineer
+  - Network Engineer
+
+job_evaluation_rules:
+  strong_match:
+    minimum_score: 80
+    action: "APPLY"
+
+  possible_match:
+    minimum_score: 65
+    action: "REVIEW"
+
+  weak_match:
+    maximum_score: 64
+    action: "SKIP"
+
+search_priorities:
+  priority_1:
+    - Operations Management
+    - Client Operations
+    - Business Operations
+    - Service Delivery
+    - Operations Transformation
+
+  priority_2:
+    - IAM Operations
+    - Identity Governance
+    - Banking Operations
+    - Client Lifecycle Management
+
+  priority_3:
+    - GTM Operations
+    - Revenue Operations
+    - Operations Automation

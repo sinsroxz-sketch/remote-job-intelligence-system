@@ -1,0 +1,66 @@
+candidate:
+  experience_years: "12+"
+  career_level: "Mid-Senior"
+
+core_domains:
+  - Banking Operations
+  - Client Lifecycle Management
+  - Corporate Banking Operations
+  - Identity and Access Management
+  - Operational Governance
+  - Process Transformation
+
+iam_experience:
+  - Access Provisioning
+  - Access Deprovisioning
+  - RBAC
+  - Entitlement Reviews
+  - Active Directory
+  - CyberArk Safe Management
+  - ServiceNow
+  - Access Governance
+
+operations_experience:
+  - Client Onboarding
+  - Account Opening
+  - Account Maintenance
+  - Account Closure
+  - Process Migration
+  - Workflow Design
+  - Operational Governance
+  - KPI Management
+  - Process Improvement
+  - Stakeholder Management
+
+strengths:
+  - Cross-functional execution
+  - Process discovery
+  - Process documentation
+  - Migration management
+  - Risk and control management
+  - Operational problem solving
+  - Stakeholder coordination
+  - Continuous improvement
+
+career_preferences:
+  remote_required: true
+  india_eligible_required: true
+  high_compensation: true
+  autonomy_preferred: true
+  work_life_balance_preferred: true
+
+avoid:
+  - Mandatory office-based roles
+  - Rotational night shifts
+  - Highly repetitive roles
+  - Heavy micromanagement
+
+career_tracks:
+  - Operations
+  - Business Operations
+  - Client Operations
+  - IAM Operations
+  - Identity Governance
+  - Service Delivery
+  - Operations Automation
+  - GTM Operations

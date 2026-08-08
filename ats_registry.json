@@ -1,0 +1,10 @@
+{
+  "companies": [
+    {
+      "name": "GitLab",
+      "ats": "greenhouse",
+      "identifier": "gitlab",
+      "career_url": "https://about.gitlab.com/jobs/"
+    }
+  ]
+}

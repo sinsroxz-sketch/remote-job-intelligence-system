@@ -3,27 +3,6 @@ import re
 from urllib.parse import urlparse
 
 
-def flatten_keywords(data):
-    """
-    Recursively extracts text values from a nested dictionary/list.
-    This allows the engine to work with different candidate search strategies.
-    """
-    values = []
-
-    if isinstance(data, dict):
-        for value in data.values():
-            values.extend(flatten_keywords(value))
-
-    elif isinstance(data, list):
-        for value in data:
-            values.extend(flatten_keywords(value))
-
-    elif isinstance(data, str):
-        values.append(data)
-
-    return values
-
-
 def clean_text(text):
     if not text:
         return ""
@@ -34,13 +13,50 @@ def clean_text(text):
     return text.lower().strip()
 
 
-def calculate_relevance(job, search_terms):
-    """
-    Lightweight pre-filter.
+def get_positive_search_terms(search_strategy):
+    terms = []
 
-    Title matches receive more weight than description matches.
-    This is NOT our final AI match score.
-    """
+    # Priority job titles
+    for title in search_strategy.get("priority_job_titles", []):
+        terms.append(title)
+
+    # Search keyword groups
+    keyword_groups = search_strategy.get("search_keywords", {})
+
+    for group_values in keyword_groups.values():
+        if isinstance(group_values, list):
+            terms.extend(group_values)
+
+    # Primary role families
+    for role in search_strategy.get("primary_role_families", []):
+        if isinstance(role, dict):
+            name = role.get("name")
+            if name:
+                terms.append(name)
+
+    # Adjacent role families
+    for role in search_strategy.get("adjacent_role_families", []):
+        if isinstance(role, dict):
+            name = role.get("name")
+            if name:
+                terms.append(name)
+
+    # Remove duplicates
+    unique_terms = []
+
+    seen = set()
+
+    for term in terms:
+        cleaned = clean_text(term)
+
+        if cleaned and cleaned not in seen:
+            seen.add(cleaned)
+            unique_terms.append(term)
+
+    return unique_terms
+
+
+def calculate_relevance(job, search_terms):
 
     title = clean_text(job.get("title"))
     description = clean_text(job.get("description"))
@@ -51,15 +67,17 @@ def calculate_relevance(job, search_terms):
     for term in search_terms:
         term_clean = clean_text(term)
 
-        if len(term_clean) < 3:
+        if len(term_clean) < 4:
             continue
 
+        # Strong match if term appears in job title
         if term_clean in title:
-            score += 5
+            score += 10
             matched_terms.append(term)
 
+        # Lower weight if only present in description
         elif term_clean in description:
-            score += 1
+            score += 2
             matched_terms.append(term)
 
     return score, list(set(matched_terms))
@@ -98,9 +116,9 @@ def detect_source_type(job):
     return "Unknown"
 
 
-def discover_companies(jobs, search_strategy, minimum_score=5):
+def discover_companies(jobs, search_strategy, minimum_score=10):
 
-    search_terms = flatten_keywords(search_strategy)
+    search_terms = get_positive_search_terms(search_strategy)
 
     companies = {}
 
@@ -150,13 +168,11 @@ def discover_companies(jobs, search_strategy, minimum_score=5):
                 "relevance_score": relevance_score
             })
 
-    # Remove duplicate matched terms
     for company in companies.values():
         company["matched_terms"] = list(
             set(company["matched_terms"])
         )
 
-    # Rank strongest companies first
     ranked_companies = sorted(
         companies.values(),
         key=lambda x: (
@@ -170,5 +186,4 @@ def discover_companies(jobs, search_strategy, minimum_score=5):
 
 
 if __name__ == "__main__":
-
-    print("Company Discovery Engine ready.")
+    print("Company Discovery Engine v2 ready.")

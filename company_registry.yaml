@@ -1,0 +1,33 @@
+companies:
+
+  - company_name: "Example Company"
+    career_url: ""
+    ats_type: ""
+    ats_identifier: ""
+
+    industries: []
+
+    remote_profile:
+      remote_friendly: "Unknown"
+      hires_in_india: "Unknown"
+      hires_worldwide: "Unknown"
+      regions: []
+
+    role_families: []
+
+    hiring_activity:
+      active_jobs: 0
+      relevant_jobs: 0
+      last_checked: ""
+      last_relevant_job_date: ""
+
+    priority:
+      score: 0
+      tier: "Unrated"
+      check_frequency: "Weekly"
+
+    source:
+      discovered_from: ""
+      discovery_date: ""
+
+    status: "Active"
